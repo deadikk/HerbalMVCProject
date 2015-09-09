@@ -1,0 +1,63 @@
+﻿@model herbDllProj.herbals
+
+<div class="coolListItem">
+    <div style="background-image:Url('@Url.Content("~/img/images_max200/"+@Model.name_latin+"/1.jpg")')" class="CoolItemPic">
+
+    </div>
+
+    
+    <span class="coolListItemTitle">@Html.ActionLink(@Model.name_latin, "Index", "Herb", "http", null, null, new { name = @Model.name_latin.Replace(' ', '_') }, null) <br /></span>
+
+    <ul class ="CollListitemCol1">
+        @for (int i = 0; i < @Model.russianNames.Count; i++)
+        {
+            if (i < 5)
+            {
+                <li>@Model.russianNames[i]</li>
+            }
+        }
+
+    </ul> 
+   
+    <ul class="CollListitemCol1">
+        @for (int i = 0; i < @Model.russianNames.Count; i++)
+        {
+            if (i >= 5 && i < 11)
+            {
+                <li>@Model.russianNames[i]</li>
+            }
+        }
+
+    </ul>
+    <ul class="CollListitemCol1">
+        @for (int i = 0; i < @Model.russianNames.Count; i++)
+        {
+            if (i >= 11 && i <= 17)
+            {
+                <li>@Model.russianNames[i]</li>
+            }
+        }
+
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+

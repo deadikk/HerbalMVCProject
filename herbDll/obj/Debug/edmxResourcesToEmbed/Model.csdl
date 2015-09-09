@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="herbalDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="herbals">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_latin" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="name_russian" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="advantages" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="herbal_using" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="receipsTxt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="additional_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="places" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="preparing" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="herbalDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="herbals" EntityType="Self.herbals" />
+  </EntityContainer>
+</Schema>

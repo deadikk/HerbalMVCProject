@@ -1,0 +1,6 @@
+﻿@using (Html.BeginForm("searchAll", "Search", FormMethod.Get))
+{
+    <span>Поиск по названию:</span>
+    @Html.TextBox("s")
+    <input type="submit" value="Search" />
+}

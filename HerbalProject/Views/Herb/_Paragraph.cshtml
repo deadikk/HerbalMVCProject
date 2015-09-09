@@ -1,0 +1,8 @@
+﻿@model string
+
+<div>
+    @foreach (string str in Model.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).ToList())
+    {
+        <p>@str</p>
+    }
+</div>

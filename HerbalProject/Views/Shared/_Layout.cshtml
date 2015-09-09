@@ -1,0 +1,40 @@
+﻿@using System.Web.Optimization;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+   
+        
+</head>
+<body>
+    <div id="globalDiv">
+
+        <div id="headerDiv">
+          @Html.Partial("_SearchLetters")
+        </div>
+
+        <div id="navigationDiv">
+            @Html.Partial("_Navigation")
+            @Html.Partial("_searchBlock")
+        </div>
+        
+        <div id="mainPageDiv">
+            
+            
+            <div id="contentDiv">
+                @RenderSection("Body")
+            </div>
+            
+
+        </div>
+
+        <div id="footerDiv">
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+   
+</body>
+</html>

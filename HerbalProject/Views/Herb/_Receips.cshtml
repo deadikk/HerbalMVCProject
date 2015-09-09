@@ -1,0 +1,15 @@
+﻿@model string
+
+<div>
+    @foreach (string receip in Model.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).ToList())
+    {
+
+        List<string> s = receip.Split(new string[] { ":\n", ": \n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+        <p>
+            <span>@s[0]:</span> <br />
+            @s[1]
+        </p>
+
+
+    }
+</div>

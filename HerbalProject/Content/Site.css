@@ -1,0 +1,120 @@
+﻿#globalDiv {
+    width: 1000px;
+    background-color: lightgoldenrodyellow;
+    margin: 0 auto;
+}
+
+#headerDiv {
+    width: 100%;
+    height: 120px;
+    border: solid 1px red;
+}
+
+#navigationDiv {
+    width: 100%;
+    border: dotted 1px green;
+}
+
+    #navigationDiv ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        width: 600px;
+    }
+
+        #navigationDiv ul li {
+            display: table-cell;
+            float: none;
+            width: 200px;
+        }
+
+            #navigationDiv ul li a {
+                display: block;
+                padding: 6px 50px;
+                background: rgb(255, 50, 50);
+                font-family: Tahoma;
+                font-size: 16px;
+                color: #fff;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+                #navigationDiv ul li a:hover {
+                    background: #ffd800;
+                    -webkit-transition: all 0.3s ease;
+                    -moz-transition: all 0.3s ease;
+                    -o-transition: all 0.3s ease;
+                    transition: all 0.3s ease;
+                }
+
+
+
+#mainPageDiv {
+    width: 100%;
+    border: solid 1px red;
+}
+
+#contentDiv {
+    border: dotted 1px green;
+    min-height: 400px;
+    width: 800px;
+}
+
+#menuDiv {
+    min-height: 200px;
+    width: 200px;
+    float: right;
+    border: dotted 1px green;
+}
+
+#footerDiv {
+    width: 100%;
+    border: solid 1px red;
+    text-align: center;
+}
+
+#allLetters a {
+    padding: 2px;
+    color: red;
+}
+
+    #allLetters a:visited {
+        padding: 2px;
+        color: red;
+    }
+
+    #allLetters a:hover {
+        padding: 2px;
+        color: orange;
+    }
+
+.coolListItem {
+    width: 790px;
+    border: 1px dotted green;
+    display:inline-block;
+    max-height: 200px;
+    position: relative;
+}
+
+.coolListItemTitle a {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.CollListitemCol1 {
+    float:left;
+}
+.CoolItemPic{
+    width: 120px;
+    height: 120px;
+    overflow:hidden;
+    float: left;
+    margin: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    border-radius:60px;
+
+}
+
