@@ -105,6 +105,7 @@
 .CollListitemCol1 {
     float:left;
 }
+
 .CoolItemPic{
     width: 120px;
     height: 120px;
@@ -118,3 +119,63 @@
 
 }
 
+.par{
+    display:block;
+    border:dotted 1px red;    
+    text-align:justify;
+    padding:5px;
+    margin:5px;
+    background-color:antiquewhite;
+    clear:both;
+}
+
+.RusPar{
+    display:block;
+    border:dotted 1px red;    
+    text-align:justify;
+    padding:5px;
+    margin:5px;
+    background-color:antiquewhite;
+
+}
+
+.par span:not(.receipTitle){
+    font-size:larger;    
+    text-decoration:underline;
+    
+}
+
+.receipTitle{
+    font-weight:bolder;
+}
+.latinHeader{
+    font-weight:bolder;
+    display:block;
+    padding:5px;
+    font-size:x-large;
+    text-align:center;
+}
+
+.herbImage{
+    width: 250px;
+    height: 250px;
+    overflow:hidden;
+    float: left;
+    margin: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    border-radius:60px;
+}
+#macroImg{
+    float:left;
+}
+#farImg{
+    float:right;
+}
+#rusNamesDiv{
+    padding-left:250px;
+    padding-right:250px;
+    margin:5px;
+    clear:none;
+}

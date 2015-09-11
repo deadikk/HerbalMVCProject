@@ -98,6 +98,22 @@ namespace HerbalProject.Controllers
 
         }
 
+        public ActionResult searchReseips(string sr)
+        {
+            if (sr.Length < 3)
+            {
+                ViewBag.message = "Введите более 3-х символов для корректного поиска.";
+                return View("_nothingToShow");
+            }
 
+            List<herbDllProj.herbals> temp = new List<herbDllProj.herbals>();
+
+            temp = herbDllProj.HerbalList.getListByReceip(sr);
+            if (temp == null || temp.Count < 1)
+            {
+                return View("_nothingToShow");
+            }
+            return View("_CoolList", temp);
+        }
     }
 }

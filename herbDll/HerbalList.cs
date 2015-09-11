@@ -75,6 +75,7 @@ namespace herbDllProj
             }
             return result;
         }
+
         public class RusLatinDictionary
         {
             public string key;
@@ -86,6 +87,28 @@ namespace herbDllProj
             }
         }
 
+        public static List<herbals> getListByReceip(string symbols)
+        {
+            List<herbals> result = new List<herbals>();
+            foreach (var item in HerbalList.herbals)
+            {
+                List<string> receips = item.receipsTxt.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                if (receips == null) continue;
+
+                /*foreach (string receip in receips)
+                {
+                    receip.Split(new string[] { ":\n", ": \n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                    
+                }*/
+
+                if (receips.Exists(x => x.ToLower().Contains(symbols.ToLower().Substring(0,symbols.Length-2))))
+                {
+                    result.Add(item);
+                }  
+
+            }
+            return result;
+        }
 
     }
 

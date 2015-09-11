@@ -4,3 +4,10 @@
     @Html.TextBox("s")
     <input type="submit" value="Search" />
 }
+
+@using (Html.BeginForm("searchReseips", "Search", FormMethod.Get))
+{
+    <span>Поиск по болезням/симптомам:</span>
+    @Html.TextBox("sr")
+    <input type="submit" value="Search" />
+}

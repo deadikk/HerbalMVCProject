@@ -8,23 +8,28 @@
 @section Body{
 
 
-    <img src="@Url.Content("~/img/images_max400/"+@Model.name_latin+"/1.jpg")" style="width:auto; height:auto; max-height:300px; max-width:300px; float:right;" alt="MacroImg" />
-    <img src="@Url.Content("~/img/images_max400/"+@Model.name_latin+"/2.jpg")" style="width:auto; height:auto; max-height:300px; max-width:300px; float:right;" alt="FarImg" />
+
+    <div style="background-image:Url('@Url.Content("~/img/images_max400/"+@Model.name_latin+"/1.jpg")')" class="herbImage" id="macroImg">
+
+    </div>
+
+    <div style="background-image:Url('@Url.Content("~/img/images_max400/"+@Model.name_latin+"/2.jpg")')" class="herbImage" id="farImg">
+
+    </div>
 
     @if (!Model.name_latin.IsEmpty())
     {
         <span class="latinHeader">@Model.name_latin</span>
 
     }
-
-    @if (Model.russianNames != null)
-    {
-        <div class="par">
-            <span>Известные народные названия:</span>
-            @Html.Partial("_RusNames", @Model.russianNames)
-        </div>
-    }
-
+    <div id="rusNamesDiv">
+        @if (Model.russianNames != null)
+        {
+            <div class="RusPar">
+                @Html.Partial("_RusNames", @Model.russianNames)
+            </div>
+        }
+    </div>
     @if (!Model.description.IsEmpty())
     {
         <div class="par">

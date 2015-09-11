@@ -1,15 +1,21 @@
 ﻿@model string
 
-<div>
-    @foreach (string receip in Model.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).ToList())
-    {
 
-        List<string> s = receip.Split(new string[] { ":\n", ": \n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-        <p>
-            <span>@s[0]:</span> <br />
+@foreach (string receip in Model.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).ToList())
+{
+
+    List<string> s = receip.Split(new string[] { ":\n", ": \n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+    <p>
+
+        @if (s.Count > 1 && s[1] != null && !s[1].IsEmpty())
+        {
+            <span class="receipTitle">@s[0]:</span> <br />
             @s[1]
-        </p>
+        }else if(@s.Count == 1){
+            <span class="receipTitle">@s[0]</span> <br /> 
+        }
+
+    </p>
 
 
-    }
-</div>
+}
