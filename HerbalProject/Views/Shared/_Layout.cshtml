@@ -5,36 +5,33 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="~/Content/Site.css" rel="stylesheet" />
-   
+    <link href="~/Content/Site2.css" rel="stylesheet" />
         
 </head>
 <body>
     <div id="globalDiv">
 
         <div id="headerDiv">
-          @Html.Partial("_SearchLetters")
+            <span>Онлайн справочник лекарственных растений</span>
         </div>
 
-        <div id="navigationDiv">
-            @Html.Partial("_Navigation")
+        <div id="searchDiv">
+            @Html.Partial("_SearchLetters")
             @Html.Partial("_searchBlock")
         </div>
-        
+
         <div id="mainPageDiv">
-            
-            
+
+
             <div id="contentDiv">
                 @RenderSection("Body")
             </div>
-            
+
 
         </div>
 
-        <div id="footerDiv">
-            @Html.Partial("_Footer")
-        </div>
+        
     </div>
-   
+
 </body>
 </html>

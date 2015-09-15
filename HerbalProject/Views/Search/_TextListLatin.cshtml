@@ -3,10 +3,28 @@
 @{
     ViewBag.Title = "Result";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int columns = 4;
+
+    int itemsInColumns = (@Model.Count % columns) == 0 ? (@Model.Count / columns) : (@Model.Count / columns + (@Model.Count % columns));
+
 }
 @section Body{
-    @foreach (var item in @Model)
-    {
-        @Html.ActionLink(@item, "Index", "Herb", "http", null, null, new { name = @item.Replace(' ', '_') }, null) <br />
-    }
+    <div id="textSearchResultList">
+        @for (int i = 0; i < columns; i++)
+        {
+            <div class="searchListColumn">
+                @for (int j = itemsInColumns * i; j < itemsInColumns * i + itemsInColumns; j++)
+                {
+                    if (@Model.Count > j)
+                    {
+                        @Html.ActionLink(@Model[j], "Index", "Herb", "http", null, null, new { name = @Model[j].Replace(' ', '_') }, null)
+                    }
+
+                }
+            </div>
+
+        }
+
+
+    </div>
 }

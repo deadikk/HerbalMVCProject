@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="herbalDBModelStoreContainer" CdmEntityContainer="herbalDBEntities">
+    <EntitySetMapping Name="herbals">
+      <EntityTypeMapping TypeName="herbalDBModel.herbals">
+        <MappingFragment StoreEntitySet="herbals">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name_latin" ColumnName="name_latin" />
+          <ScalarProperty Name="name_russian" ColumnName="name_russian" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="advantages" ColumnName="advantages" />
+          <ScalarProperty Name="herbal_using" ColumnName="herbal_using" />
+          <ScalarProperty Name="receipsTxt" ColumnName="receipsTxt" />
+          <ScalarProperty Name="additional_info" ColumnName="additional_info" />
+          <ScalarProperty Name="places" ColumnName="places" />
+          <ScalarProperty Name="preparing" ColumnName="preparing" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

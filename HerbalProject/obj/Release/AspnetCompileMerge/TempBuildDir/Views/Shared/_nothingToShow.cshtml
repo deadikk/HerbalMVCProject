@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Nothing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Body{
+    @if(@ViewBag.message == null){
+    <h3>Поиск не дал результатов. Проверьте правильность введенных данных.</h3>
+    }
+    <h3>@ViewBag.message</h3>
+
+}

@@ -1,0 +1,11 @@
+﻿@model List<herbDllProj.herbals>
+
+@section Body{
+
+    @foreach (var item in @Model)
+    {
+        @Html.Partial("_CoolListItem", item);
+
+    }
+
+}

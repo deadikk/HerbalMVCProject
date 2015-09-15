@@ -110,6 +110,11 @@ namespace herbDllProj
             return result;
         }
 
+        public static List<herbals> getRelatedHerbs(string mainLatinName)
+        {
+            return HerbalList.herbals.Where(h => h.name_latin.ToLower().Contains(mainLatinName.Split(' ')[0].ToLower()) && h.name_latin != mainLatinName).ToList();
+        }
+
     }
 
 

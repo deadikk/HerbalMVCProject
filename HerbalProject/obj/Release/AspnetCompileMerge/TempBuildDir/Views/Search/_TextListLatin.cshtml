@@ -1,0 +1,12 @@
+﻿@model List<string>
+
+@{
+    ViewBag.Title = "Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Body{
+    @foreach (var item in @Model)
+    {
+        @Html.ActionLink(@item, "Index", "Herb", "http", null, null, new { name = @item.Replace(' ', '_') }, null) <br />
+    }
+}

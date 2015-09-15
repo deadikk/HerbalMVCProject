@@ -64,7 +64,7 @@
 
     @if (!Model.receipsTxt.IsEmpty())
     {
-        <div class="par">
+        <div class="receipspar">
             <span>Рекомендации к применению:</span>
             @Html.Partial("_Receips", @Model.receipsTxt)
         </div>
@@ -76,5 +76,14 @@
             @Html.Partial("_Paragraph", @Model.additional_info)
         </div>
     }
+
+    @if (((List<herbDllProj.herbals>)@ViewBag.relatedHerbs).Count() > 0)
+    {
+        <div class="par">
+            <span>Похожие растения:</span>
+           @Html.Partial("_relatedHerbs", (List<herbDllProj.herbals>)@ViewBag.relatedHerbs)
+        </div>
+    }
+
 
 }

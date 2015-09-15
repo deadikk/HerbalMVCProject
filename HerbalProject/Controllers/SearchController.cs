@@ -36,13 +36,14 @@ namespace HerbalProject.Controllers
         {
             StringBuilder sb = new StringBuilder();
             int i = 0;
-            for (char x = 'А'; x <= 'Щ'; x++, i++)
+            
+            for (char x = 'А'; x <= 'Я'; x++, i++)
             {
-                sb.Append(x);
-            }
-            for (char x = 'Э'; x <= 'Я'; x++, i++)
-            {
-                sb.Append(x);
+                if (x != 'Й' && x != 'Ь' && x != 'Ъ' && x != 'Ё' && x != 'Ы')
+                {
+                    sb.Append(x);
+                }
+               
             }
 
             return PartialView("_Letters", sb.ToString());
@@ -100,7 +101,7 @@ namespace HerbalProject.Controllers
 
         public ActionResult searchReseips(string sr)
         {
-            if (sr.Length < 3)
+            if (sr.Length < 4)
             {
                 ViewBag.message = "Введите более 3-х символов для корректного поиска.";
                 return View("_nothingToShow");

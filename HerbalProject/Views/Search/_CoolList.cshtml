@@ -1,11 +1,14 @@
 ﻿@model List<herbDllProj.herbals>
 
 @section Body{
+    <div id="coolListWrapper">
+        <span>Результаты поиска:</span>
 
     @foreach (var item in @Model)
     {
         @Html.Partial("_CoolListItem", item);
 
     }
+</div>
 
 }

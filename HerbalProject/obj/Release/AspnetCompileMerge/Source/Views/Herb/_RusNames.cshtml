@@ -1,0 +1,8 @@
+﻿@model List<string>
+
+<ul>
+    @foreach (string name in @Model.OrderBy(n=>n))
+    {
+        <li>@name</li>
+    }
+</ul>

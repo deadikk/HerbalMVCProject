@@ -1,0 +1,10 @@
+D:\Projects\My\HerbalProject\herbDll\bin\Release\herbDllProj.dll.config
+D:\Projects\My\HerbalProject\herbDll\bin\Release\herbDllProj.dll
+D:\Projects\My\HerbalProject\herbDll\bin\Release\herbDllProj.pdb
+D:\Projects\My\HerbalProject\herbDll\bin\Release\EntityFramework.dll
+D:\Projects\My\HerbalProject\herbDll\bin\Release\EntityFramework.SqlServer.dll
+D:\Projects\My\HerbalProject\herbDll\bin\Release\EntityFramework.xml
+D:\Projects\My\HerbalProject\herbDll\bin\Release\EntityFramework.SqlServer.xml
+D:\Projects\My\HerbalProject\herbDll\obj\Release\herbDllProj.csprojResolveAssemblyReference.cache
+D:\Projects\My\HerbalProject\herbDll\obj\Release\herbDllProj.dll
+D:\Projects\My\HerbalProject\herbDll\obj\Release\herbDllProj.pdb

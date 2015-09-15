@@ -1,13 +1,16 @@
-﻿@using (Html.BeginForm("searchAll", "Search", FormMethod.Get))
-{
-    <span>Поиск по названию:</span>
-    @Html.TextBox("s")
-    <input type="submit" value="Search" />
-}
+﻿<div id="searchBlock">
 
-@using (Html.BeginForm("searchReseips", "Search", FormMethod.Get))
-{
-    <span>Поиск по болезням/симптомам:</span>
-    @Html.TextBox("sr")
-    <input type="submit" value="Search" />
-}
+
+    @using (Html.BeginForm("searchAll", "Search", FormMethod.Get))
+    {
+        
+        @Html.TextBox("s", "Поиск по названию", new { onclick = "value = '';" })
+        <input type="submit" value="Search" style="float:left; margin-left:5px; margin-right:250px;"/>
+    }
+
+    @using (Html.BeginForm("searchReseips", "Search", FormMethod.Get))
+    {       
+        @Html.TextBox("sr", "Поиск по болезням", new {  onclick = "value = '';" })
+        <input type="submit" value="Search" />
+    }
+</div>

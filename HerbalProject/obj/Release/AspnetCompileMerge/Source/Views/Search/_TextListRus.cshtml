@@ -1,0 +1,9 @@
+﻿@model List<herbDllProj.HerbalList.RusLatinDictionary>
+
+@section Body{
+    @foreach (var item in @Model)
+    {
+        @Html.ActionLink(@item.key + " (" + @item.value + ")", "Index", "Herb", "http", null, null, new { name = @item.value.Replace(' ', '_') }, null) <br />
+    }
+
+}

@@ -17,7 +17,8 @@ namespace HerbalProject.Controllers
             if (temp == null)
             {
                 return View("_nothingToShow");
-            } 
+            }
+            ViewBag.relatedHerbs = herbDllProj.HerbalList.getRelatedHerbs(temp.name_latin);
             return View(temp);
         }
 
