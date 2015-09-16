@@ -89,6 +89,11 @@ namespace herbDllProj
 
         public static List<herbals> getListByReceip(string symbols)
         {
+            if (symbols == "givemeallherbalsplease")
+            {
+                return herbals;
+            }
+
             List<herbals> result = new List<herbals>();
             foreach (var item in HerbalList.herbals)
             {
@@ -112,7 +117,22 @@ namespace herbDllProj
 
         public static List<herbals> getRelatedHerbs(string mainLatinName)
         {
-            return HerbalList.herbals.Where(h => h.name_latin.ToLower().Contains(mainLatinName.Split(' ')[0].ToLower()) && h.name_latin != mainLatinName).ToList();
+            List<herbals> result = new List<herbals>();
+            result.AddRange(HerbalList.herbals.Where(h => h.name_latin.ToLower().Contains(mainLatinName.Split(' ')[0].ToLower()) && h.name_latin != mainLatinName).ToList());
+
+            //закоментил, потому что слова вроде "официальный" не связаны
+            /*if (result.Count < 5 && mainLatinName.Split(' ').Length > 1)
+            {
+                result.AddRange(HerbalList.herbals.Where(h => h.name_latin.ToLower().Contains(mainLatinName.Split(' ')[1].ToLower()) && h.name_latin != mainLatinName).ToList());
+            }
+            if (result.Count < 10 && mainLatinName.Split(' ').Length > 2)
+            {
+                result.AddRange(HerbalList.herbals.Where(h => h.name_latin.ToLower().Contains(mainLatinName.Split(' ')[2].ToLower()) && h.name_latin != mainLatinName).ToList());
+            }*/
+
+            //return result;
+            return result.Take(10).ToList();
+
         }
 
     }

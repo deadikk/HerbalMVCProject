@@ -1,10 +1,16 @@
 ﻿
 <div id="allLetters">
-    <div class="Linkletters" id="latinLetters" >
-        @Html.Action("latinLetters", "Search", null)
+    <div class="tooltip">
+        <span>Поиск по первой букве в международной номенклатуре</span>
+        <div class="Linkletters" id="latinLetters">
+            @Html.Action("latinLetters", "Search", null)
+        </div>
     </div>
 
-    <div class="Linkletters"  id="rusLetters" >
-        @Html.Action("rusLetters", "Search", null)
+    <div class="tooltip">
+        <div class="Linkletters" id="rusLetters">
+            <span style="margin-left:45px;">Поиск по первой букве в народных названиях</span>
+            @Html.Action("rusLetters", "Search", null)
+        </div>
     </div>
 </div>

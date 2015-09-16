@@ -95,13 +95,15 @@ namespace HerbalProject.Controllers
                 return View("_nothingToShow");
             }
             temp.ForEach(h => h.russianNames.Sort());
+            ViewBag.searchedText = s;
+            ViewBag.Title = "Поиск:" + s;
             return View("_CoolList", temp);
 
         }
 
-        public ActionResult searchReseips(string sr)
+        public ActionResult searchReseips(string r)
         {
-            if (sr.Length < 4)
+            if (r.Length < 4)
             {
                 ViewBag.message = "Введите более 3-х символов для корректного поиска.";
                 return View("_nothingToShow");
@@ -109,11 +111,12 @@ namespace HerbalProject.Controllers
 
             List<herbDllProj.herbals> temp = new List<herbDllProj.herbals>();
 
-            temp = herbDllProj.HerbalList.getListByReceip(sr);
+            temp = herbDllProj.HerbalList.getListByReceip(r);
             if (temp == null || temp.Count < 1)
             {
                 return View("_nothingToShow");
             }
+            ViewBag.Title = "Поиск:" + r;
             return View("_CoolList", temp);
         }
     }

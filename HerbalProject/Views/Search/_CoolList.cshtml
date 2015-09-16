@@ -1,8 +1,9 @@
 ﻿@model List<herbDllProj.herbals>
 
+
 @section Body{
     <div id="coolListWrapper">
-        <span>Результаты поиска:</span>
+        <span>Результаты поиска по запросу:@ViewBag.searchedText</span>
 
     @foreach (var item in @Model)
     {

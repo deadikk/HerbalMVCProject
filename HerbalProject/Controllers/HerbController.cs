@@ -13,7 +13,11 @@ namespace HerbalProject.Controllers
         [HttpGet]
         public ActionResult Index(string name)
         {
-            herbDllProj.herbals temp = herbDllProj.HerbalList.herbals.Find(n => n.name_latin == name.Replace('_', ' '));
+            if (name == null)
+            {
+                return View("_nothingToShow");
+            }
+            herbDllProj.herbals temp = herbDllProj.HerbalList.herbals.Find(n => n.name_latin == name.Replace('_', ' ').Replace('-', '.'));
             if (temp == null)
             {
                 return View("_nothingToShow");

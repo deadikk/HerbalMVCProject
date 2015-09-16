@@ -1,16 +1,44 @@
 ﻿<div id="searchBlock">
+    <script>
+
+        function searchByName() {
+            var value = document.getElementById('s').value;
+            window.location = "/SearchByNames/" + value;
+        };
+
+        function SearchBySickness() {
+            var val = document.getElementById('r').value;
+            window.location = "/SearchBySickness/" + val;
+        };
+
+        function searchKeyPress(e) {
+            // look for window.event in case event isn't passed in
+            e = e || window.event;
+            if (e.keyCode == 13) {
+                searchByName();
+                return false;
+            }
+            return true;
+        }
+        function searchReceipKeyPress(e) {
+            // look for window.event in case event isn't passed in
+            e = e || window.event;
+            if (e.keyCode == 13) {
+                SearchBySickness();
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+
+    <input type="text" id="s" name="s" onclick="value = '';" , title="Текстовый поиск по международным и руским названиям" value="Поиск по названию" onkeypress="return searchKeyPress(event);" />
+    <button id="nameSearchSubmit" title="Поиск по названию" onclick="searchByName();" class="sButton">Search</button>
 
 
-    @using (Html.BeginForm("searchAll", "Search", FormMethod.Get))
-    {
-        
-        @Html.TextBox("s", "Поиск по названию", new { onclick = "value = '';" })
-        <input type="submit" value="Search" style="float:left; margin-left:5px; margin-right:250px;"/>
-    }
+    <input type="text" id="r" name="r" onclick="value = '';" , title="Рекомендуется вводить болезнь в творительном падеже (кашле/простуде и тд)" value="Поиск по болезням" onkeypress="return searchReceipKeyPress(event);" />
+    <button id="SicknessSearchSubmit" title="Поиск по названию" onclick="SearchBySickness();" class="srButton">Search</button>
 
-    @using (Html.BeginForm("searchReseips", "Search", FormMethod.Get))
-    {       
-        @Html.TextBox("sr", "Поиск по болезням", new {  onclick = "value = '';" })
-        <input type="submit" value="Search" />
-    }
+    
+    
 </div>

@@ -1,7 +1,7 @@
 ﻿@model List<herbDllProj.HerbalList.RusLatinDictionary>
 
 @{
-    ViewBag.Title = "Result";
+    ViewBag.Title = "Растения на букву \""+ @Model[0].key[0] + "\"";
     Layout = "~/Views/Shared/_Layout.cshtml";
     int columns = 4;
 
@@ -11,6 +11,7 @@
 @section Body{
     
     <div id="textSearchResultList">
+        <span>Растения на букву "@Model[0].key[0]"</span>
         @for (int i = 0; i < columns; i++)
         {
             <div class="searchListColumn">
@@ -18,7 +19,7 @@
                 {
                     if (@Model.Count > j)
                     {
-                        <a href="@Url.Action("Index", "Herb", new { name = @Model[j].value.Replace(' ', '_') })"> @Model[j].key<br/>(@Model[j].value)</a>
+                        <a href="@Url.Action("Index", "Herb", new { name = @Model[j].value.Replace(' ', '_').Replace('.', '-') })"> @Model[j].key<br/>(@Model[j].value)</a>
                         //@Html.ActionLink(, "Index", "Herb", "http", null, null, new { name = @Model[j].value.Replace(' ', '_') }, null)
                     }
 

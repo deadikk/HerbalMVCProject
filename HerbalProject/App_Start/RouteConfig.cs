@@ -14,10 +14,35 @@ namespace HerbalProject
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "SimpleHerb",
+                url: "{name}",
+                defaults: new { controller = "Herb", action = "Index", name = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "alphabet",
+                url: "alphabet/{letter}",
+                defaults: new { controller = "Search", action = "textList", letter = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "SearchBySickness",
+                url: "SearchBySickness/{r}",
+                defaults: new { controller = "Search", action = "searchReseips", r = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "SearchByNames",
+                url: "SearchByNames/{s}",
+                defaults: new { controller = "Search", action = "searchAll", s = UrlParameter.Optional }
+            );
+                        
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            
         }
     }
 }
