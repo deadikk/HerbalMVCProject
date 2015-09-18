@@ -3,9 +3,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section Body{
-    @if(@ViewBag.message == null){
-    <h3>Поиск не дал результатов. Проверьте правильность введенных данных.</h3>
+    <div id="textSearchResultList">
+    @if (@ViewBag.message == null)
+    {
+        <h3 style="text-align:center;">Поиск не дал результатов.<br /> Проверьте правильность введенных данных.</h3>
     }
     <h3>@ViewBag.message</h3>
+</div>
 
 }

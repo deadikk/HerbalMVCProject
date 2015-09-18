@@ -1,9 +1,33 @@
 ﻿@model List<herbDllProj.HerbalList.RusLatinDictionary>
 
-@section Body{
-    @foreach (var item in @Model)
-    {
-        @Html.ActionLink(@item.key + " (" + @item.value + ")", "Index", "Herb", "http", null, null, new { name = @item.value.Replace(' ', '_') }, null) <br />
-    }
+@{
+    ViewBag.Title = "Растения на букву \""+ @Model[0].key[0] + "\"";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int columns = 4;
 
+    int itemsInColumns = (@Model.Count % columns) == 0 ? (@Model.Count / columns) : (@Model.Count / columns + (@Model.Count % columns));
+
+}
+@section Body{
+    
+    <div id="textSearchResultList">
+        <span>Растения на букву "@Model[0].key[0]"</span>
+        @for (int i = 0; i < columns; i++)
+        {
+            <div class="searchListColumn">
+                @for (int j = itemsInColumns * i; j < itemsInColumns * i + itemsInColumns; j++)
+                {
+                    if (@Model.Count > j)
+                    {
+                        <a href="@Url.Action("Index", "Herb", new { name = @Model[j].value.Replace(' ', '_').Replace('.', '!') })"> @Model[j].key<br/>(@Model[j].value)</a>
+                        //@Html.ActionLink(, "Index", "Herb", "http", null, null, new { name = @Model[j].value.Replace(' ', '_') }, null)
+                    }
+
+                }
+            </div>
+
+        }
+
+
+    </div>
 }

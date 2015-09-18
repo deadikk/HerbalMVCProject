@@ -1,80 +1,94 @@
 ﻿@model herbDllProj.herbals
 
 @{
-    ViewBag.Title = "Herbal";
+    ViewBag.Title = @Model.name_latin;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section Body{
 
+    <div class="herbalMainDiv">
 
+        <div style="background-image:Url('@Url.Content("~/img/images_max400/"+@Model.name_latin+"/1.jpg")')" class="herbImage" id="macroImg" onclick="showBigImage(this.id)">
 
-    <div style="background-image:Url('@Url.Content("~/img/images_max400/"+@Model.name_latin+"/1.jpg")')" class="herbImage" id="macroImg">
+        </div>
 
-    </div>
+        <div style="background-image:Url('@Url.Content("~/img/images_max400/"+@Model.name_latin+"/2.jpg")')" class="herbImage" id="farImg" onclick="showBigImage(this.id)">
 
-    <div style="background-image:Url('@Url.Content("~/img/images_max400/"+@Model.name_latin+"/2.jpg")')" class="herbImage" id="farImg">
+        </div>
 
-    </div>
-
-    @if (!Model.name_latin.IsEmpty())
-    {
-        <span class="latinHeader">@Model.name_latin</span>
-
-    }
-    <div id="rusNamesDiv">
-        @if (Model.russianNames != null)
+        @if (!Model.name_latin.IsEmpty())
         {
-            <div class="RusPar">
-                @Html.Partial("_RusNames", @Model.russianNames)
+            <span class="latinHeader">@Model.name_latin</span>
+
+        }
+        <div id="rusNamesDiv">
+            @if (Model.russianNames != null)
+            {
+                <div class="RusPar">
+                    @Html.Partial("_RusNames", @Model.russianNames)
+                </div>
+            }
+        </div>
+        @if (!Model.description.IsEmpty())
+        {
+            <div class="par">
+                <span>Описание:</span>
+                @Html.Partial("_Paragraph", @Model.description)
             </div>
         }
+
+        @if (!Model.places.IsEmpty())
+        {
+            <div class="par">
+                <span>Ареал произрастания:</span>
+                @Html.Partial("_Paragraph", @Model.places)
+            </div>
+        }
+
+        @if (!Model.preparing.IsEmpty())
+        {
+            <div class="par">
+                <span>Заготовка:</span>
+                @Html.Partial("_Paragraph", @Model.preparing)
+            </div>
+        }
+
+        @if (!Model.herbal_using.IsEmpty())
+        {
+            <div class="par">
+                <span>Применение:</span>
+                @Html.Partial("_Paragraph", @Model.herbal_using)
+            </div>
+        }
+
+        @if (!Model.receipsTxt.IsEmpty())
+        {
+            <div class="receipspar">
+                <span>Рекомендации к применению:</span>
+                @Html.Partial("_Receips", @Model.receipsTxt)
+            </div>
+        }
+
+        @if (!Model.additional_info.IsEmpty())
+        {
+            <div class="par attention">
+                @Html.Partial("_Paragraph", @Model.additional_info)
+            </div>
+        }
+
+        @if (((List<herbDllProj.herbals>)@ViewBag.relatedHerbs).Count() > 0)
+        {
+            <div class="par">
+                <span>Похожие растения:</span>
+                @Html.Partial("_relatedHerbs", (List<herbDllProj.herbals>)@ViewBag.relatedHerbs)
+            </div>
+        }
+        <div id="bigImageWrapper" onclick="hideBigImage();" class="hide">
+            <div id="bigImage" onclick="hideBigImage();">
+                <img src="@Url.Content("~/img/images_max1000/"+@Model.name_latin+"/1.jpg")" id="origImage" alt="Big herbal image" onclick="hideBigImage();" />
+            </div>
+            <div id="helper"></div>
+        </div>
     </div>
-    @if (!Model.description.IsEmpty())
-    {
-        <div class="par">
-            <span>Описание:</span>
-            @Html.Partial("_Paragraph", @Model.description)
-        </div>
-    }
-
-    @if (!Model.places.IsEmpty())
-    {
-        <div class="par">
-            <span>Ареал произрастания:</span>
-            @Html.Partial("_Paragraph", @Model.places)
-        </div>
-    }
-
-    @if (!Model.preparing.IsEmpty())
-    {
-        <div class="par">
-            <span>Заготовка:</span>
-            @Html.Partial("_Paragraph", @Model.preparing)
-        </div>
-    }
-
-    @if (!Model.herbal_using.IsEmpty())
-    {
-        <div class="par">
-            <span>Применение:</span>
-            @Html.Partial("_Paragraph", @Model.herbal_using)
-        </div>
-    }
-
-    @if (!Model.receipsTxt.IsEmpty())
-    {
-        <div class="par">
-            <span>Рекомендации к применению:</span>
-            @Html.Partial("_Receips", @Model.receipsTxt)
-        </div>
-    }
-
-    @if (!Model.additional_info.IsEmpty())
-    {
-        <div class="par attention">
-            @Html.Partial("_Paragraph", @Model.additional_info)
-        </div>
-    }
-
 }

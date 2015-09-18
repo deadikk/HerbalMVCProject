@@ -15,7 +15,7 @@ namespace HerbalProject
 
             routes.MapRoute(
                 name: "SimpleHerb",
-                url: "{name}",
+                url: "herb/{name}",
                 defaults: new { controller = "Herb", action = "Index", name = UrlParameter.Optional }
             );
 
@@ -34,15 +34,19 @@ namespace HerbalProject
                 url: "SearchByNames/{s}",
                 defaults: new { controller = "Search", action = "searchAll", s = UrlParameter.Optional }
             );
-                        
+
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "Index" }
+            );
+            routes.MapRoute(
+            "404-PageNotFound",
+            "{*url}",
+            new { controller = "Home", action = "PageNotFound" }
             );
 
-            
         }
     }
 }

@@ -1,13 +1,44 @@
-﻿@using (Html.BeginForm("searchAll", "Search", FormMethod.Get))
-{
-    <span>Поиск по названию:</span>
-    @Html.TextBox("s")
-    <input type="submit" value="Search" />
-}
+﻿<div id="searchBlock">
+    <script>
 
-@using (Html.BeginForm("searchReseips", "Search", FormMethod.Get))
-{
-    <span>Поиск по болезням/симптомам:</span>
-    @Html.TextBox("sr")
-    <input type="submit" value="Search" />
-}
+        function searchByName() {
+            var value = document.getElementById('s').value;
+            window.location = "/SearchByNames/" + value;
+        };
+
+        function SearchBySickness() {
+            var val = document.getElementById('r').value;
+            window.location = "/SearchBySickness/" + val;
+        };
+
+        function searchKeyPress(e) {
+            // look for window.event in case event isn't passed in
+            e = e || window.event;
+            if (e.keyCode == 13) {
+                searchByName();
+                return false;
+            }
+            return true;
+        }
+        function searchReceipKeyPress(e) {
+            // look for window.event in case event isn't passed in
+            e = e || window.event;
+            if (e.keyCode == 13) {
+                SearchBySickness();
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+
+    <input type="text" id="s" name="s" onclick="value = '';" , title="Текстовый поиск по международным и руским названиям" value="Поиск по названию" onkeypress="return searchKeyPress(event);" />
+    <button id="nameSearchSubmit" title="Поиск по названию" onclick="searchByName();" class="sButton">Search</button>
+
+
+    <input type="text" id="r" name="r" onclick="value = '';" , title="Рекомендуется вводить болезнь в творительном падеже (кашле/простуде и тд)" value="Поиск по болезням" onkeypress="return searchReceipKeyPress(event);" />
+    <button id="SicknessSearchSubmit" title="Поиск по названию" onclick="SearchBySickness();" class="srButton">Search</button>
+
+    
+    
+</div>

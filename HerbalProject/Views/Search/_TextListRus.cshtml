@@ -19,7 +19,7 @@
                 {
                     if (@Model.Count > j)
                     {
-                        <a href="@Url.Action("Index", "Herb", new { name = @Model[j].value.Replace(' ', '_').Replace('.', '-') })"> @Model[j].key<br/>(@Model[j].value)</a>
+                        <a href="@Url.Action("Index", "Herb", new { name = @Model[j].value.Replace(' ', '_').Replace('.', '!') })"> @Model[j].key<br/>(@Model[j].value)</a>
                         //@Html.ActionLink(, "Index", "Herb", "http", null, null, new { name = @Model[j].value.Replace(' ', '_') }, null)
                     }
 

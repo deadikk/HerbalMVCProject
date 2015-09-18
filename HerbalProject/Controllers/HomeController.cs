@@ -18,21 +18,9 @@ namespace HerbalProject.Controllers
             return View();
             
         }
-
-        public ActionResult Search()
+        public ActionResult PageNotFound()
         {
             return View();
         }
-
-        public ActionResult SearchLatin(string searchText)
-        {
-            return View();
-        }
-
-        public ActionResult SearchRus(string searchText)
-        {
-            return View();
-        }
-
     }
 }

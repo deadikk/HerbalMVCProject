@@ -17,7 +17,7 @@ namespace HerbalProject.Controllers
             {
                 return View("_nothingToShow");
             }
-            herbDllProj.herbals temp = herbDllProj.HerbalList.herbals.Find(n => n.name_latin == name.Replace('_', ' ').Replace('-', '.'));
+            herbDllProj.herbals temp = herbDllProj.HerbalList.herbals.Find(n => n.name_latin == name.Replace('_', ' ').Replace('!', '.'));
             if (temp == null)
             {
                 return View("_nothingToShow");

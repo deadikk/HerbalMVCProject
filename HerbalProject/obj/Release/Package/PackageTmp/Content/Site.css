@@ -142,6 +142,8 @@
 .par span:not(.receipTitle){
     font-size:larger;    
     text-decoration:underline;
+    text-align:left;
+    display:block;
     
 }
 
