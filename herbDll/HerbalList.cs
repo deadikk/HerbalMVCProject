@@ -100,17 +100,25 @@ namespace herbDllProj
                 List<string> receips = item.receipsTxt.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
                 if (receips == null) continue;
 
-                /*foreach (string receip in receips)
-                {
-                    receip.Split(new string[] { ":\n", ": \n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                    
-                }*/
-
-                if (receips.Exists(x => x.ToLower().Contains(symbols.ToLower().Substring(0,symbols.Length-2))))
+                if (receips.Exists(x => x.ToLower().Contains(symbols.ToLower())))
                 {
                     result.Add(item);
-                }  
+                }
 
+            }
+
+            if (result.Count < 10)
+            {
+                foreach (var item in HerbalList.herbals)
+                {
+                    List<string> receips = item.receipsTxt.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                    
+                    if (receips.Exists(x => x.ToLower().Contains(symbols.ToLower().Substring(0, symbols.Length - 1))))
+                    {
+                        result.Add(item);
+                    }
+
+                }
             }
             return result;
         }

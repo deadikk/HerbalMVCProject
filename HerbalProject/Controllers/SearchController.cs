@@ -96,7 +96,7 @@ namespace HerbalProject.Controllers
             }
             temp.ForEach(h => h.russianNames.Sort());
             ViewBag.searchedText = s;
-            ViewBag.Title = "Поиск:" + s;
+            ViewBag.Title = "Поиск: " + s;
             return View("_CoolList", temp);
 
         }
@@ -116,7 +116,8 @@ namespace HerbalProject.Controllers
             {
                 return View("_nothingToShow");
             }
-            ViewBag.Title = "Поиск:" + r;
+            ViewBag.searchedText = r;
+            ViewBag.Title = "Поиск: " + r;
             return View("_CoolList", temp);
         }
     }
