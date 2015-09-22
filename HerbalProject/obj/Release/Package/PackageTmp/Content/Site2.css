@@ -3,7 +3,7 @@
     padding: 0;
     color: #003562;
     font-family: glyphicons-halflings-regular;
-    background-color: rgb(232, 251, 196);
+    /*background-color: rgb(232, 251, 196);*/
     cursor: default;
 }
 
@@ -14,7 +14,7 @@
 
 #globalDiv {
     width: 850px;
-    background-color: rgb(232, 251, 196);
+    /*background-color: rgb(232, 251, 196);*/
     margin: 0 auto 10px;
     border-radius: 10px;
 }
@@ -22,7 +22,7 @@
 #headerDiv {
     width: 100%;
     height: 100px;
-    background-color: rgba(175,226,228,1);
+    background-color: rgb(179, 210, 236);
     border-radius: 10px 10px 0 0;
     /*background-color: lightyellow;*/
 }
@@ -31,7 +31,7 @@
         font-size: 35px;
         text-align: center;
         display: block;
-        color: rgba(175,226,228,1);
+        color: rgb(179, 210, 236);
         text-shadow: -2px 0 #003562, 0 2px #003562, 2px 0 #003562, 0 -2px #003562;
     }
 
@@ -56,7 +56,8 @@
         }
 
         #allLetters a:hover {
-            background-color: rgb(232, 251, 196);
+            color: rgba(179, 210, 236,1);
+            background-color: rgba(1, 68, 125, 0.5);
         }
 
 
@@ -73,7 +74,7 @@
 
 #searchBlock {
     clear: both;
-    background-color: rgba(175,226,228,1);
+    background-color: rgb(179, 210, 236);
     padding: 5px 40px 10px 40px;
     border-radius: 0 0 10px 10px;
     margin: 0;
@@ -85,7 +86,7 @@
     float: left;
     margin-left: 20px;
     padding-left: 3px;
-    border: 1px solid rgba(175,226,228,1);
+    border: 1px solid rgb(179, 210, 236);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -102,7 +103,7 @@
     margin-left: 5px;
     margin-right: 200px;
     border-radius: 5px;
-    border: 1px solid rgba(175,226,228,1);
+    border: 1px solid rgb(179, 210, 236);
     height: 22px;
 }
 
@@ -114,7 +115,7 @@
     color: grey;
     width: 200px;
     padding-left: 3px;
-    border: 1px solid rgba(175,226,228,1);
+    border: 1px solid rgb(179, 210, 236);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -128,10 +129,11 @@
 
 .srButton {
     border-radius: 5px;
-    border: 1px solid rgba(175,226,228,1);
+    border: 1px solid rgb(179, 210, 236);
     height: 22px;
 }
-.srButton:hover {
+
+    .srButton:hover {
         border: 1px solid #01447D;
     }
 
@@ -148,7 +150,7 @@
 
 #footerDiv {
     width: 100%;
-    background-color: rgba(175,226,228,0.8);
+    background-color: rgba(179, 210, 236,0.8);
     text-align: center;
     border-radius: 0 0 10px 10px;
 }
@@ -160,8 +162,8 @@
     max-height: 130px;
     position: relative;
     margin: 2px 10px;
-    background-color: rgba(175,226,228,1);
-    border: 1px solid rgba(175,226,228,1);
+    background-color: rgba(179, 210, 236, 0.2);
+    padding: 3px 0 0 0;
     border-radius: 10px;
 }
 
@@ -172,15 +174,16 @@
     }
 
     .coolListItem:hover {
-        background-color: rgba(232, 251, 196,0.6);
+        background-color: rgba(179, 210, 236, 1);
     }
 
 #coolListWrapper {
     width: 830px;
     margin: 0 10px;
     border-radius: 10px;
-    background-color: rgba(175,226,228,1);
+    background-color: rgba(179, 210, 236, 0.2);
     display: inline-block;
+    min-height:400px;
 }
 
     #coolListWrapper > span:first-child {
@@ -188,7 +191,7 @@
         text-align: center;
         display: block;
         width: 100%;
-        background-color: rgba(175,226,228,0.8);
+        background-color: rgba(179, 210, 236,0.8);
         padding: 5px 0;
         border-radius: 10px 10px 0 0;
         color: #01447D;
@@ -242,7 +245,7 @@
     background-repeat: no-repeat;
     background-position: 50% 0;
     border-radius: 60px;
-    border: 1px solid rgba(232, 251, 196,0.4);
+    border: 1px solid rgba(179, 210, 236,1);
 }
 
 .par {
@@ -250,7 +253,7 @@
     text-align: justify;
     padding: 0;
     margin: 10px;
-    background-color: rgba(175,226,228,0.5);
+    background-color: rgba(179, 210, 236,0.5);
     clear: both;
     border-radius: 10px;
 }
@@ -271,7 +274,7 @@
     text-align: justify;
     padding: 0;
     margin: 10px;
-    background-color: rgba(175,226,228,0.5);
+    background-color: rgba(179, 210, 236,0.5);
     clear: both;
     border-radius: 10px;
 }
@@ -287,14 +290,14 @@
         text-align: center;
         display: block;
         width: 100%;
-        background-color: rgba(175,226,228,0.8);
+        background-color: rgba(179, 210, 236,0.8);
         padding: 5px 0;
         border-radius: 10px 10px 0 0;
     }
 
 .RusPar {
     display: block;
-    background-color: rgba(175,226,228,0.5);
+    background-color: rgba(179, 210, 236,0.5);
     text-align: justify;
     padding: 5px;
     margin: 5px;
@@ -310,7 +313,7 @@
 
         .RusPar ul li {
             color: rgba(0,50,150,0.9);
-            background-color: rgba(175,226,228,1);
+            background-color: rgb(179, 210, 236);
             border-radius: 5px;
             max-width: 250px;
             min-width: 150px;
@@ -322,7 +325,7 @@
     text-align: center;
     display: block;
     width: 100%;
-    background-color: rgba(175,226,228,0.8);
+    background-color: rgba(179, 210, 236,0.8);
     padding: 5px 0;
     border-radius: 10px 10px 0 0;
 }
@@ -346,14 +349,13 @@
 .latinHeader {
     font-weight: bolder;
     display: block;
-    margin: 0 auto;
-    padding: 5px;
-    font-size: x-large;
+    width: 100%;
+    font-size: larger;
     text-align: center;
     color: rgba(0,50,150,0.9);
-    background-color: rgba(175,226,228,1);
-    width: 350px;
-    border-radius: 10px;
+    background-color: rgb(179, 210, 236);
+    border-radius: 10px 10px 0 0;
+    padding: 5px 0;
 }
 
 .herbImage {
@@ -367,6 +369,12 @@
     background-position: 50% 0;
     border-radius: 125px;
     cursor: pointer;
+    
+}
+
+.herbImage:hover {
+    
+    box-shadow: 0 0 10px rgba(0,50,150,0.8);
 }
 
 #macroImg {
@@ -385,13 +393,13 @@
 }
 
 #textSearchResultList {
-    margin: 0 10px;
+    margin: 0 15px;
     display: inline-block;
     position: relative;
-    background-color: rgba(175,226,228,1);
+    background-color: rgba(179, 210, 236,0.2);
     width: 820px;
     border-radius: 10px;
-    padding: 5px;
+    min-height:400px;
 }
 
     #textSearchResultList span {
@@ -401,12 +409,9 @@
         font-size: larger;
         font-weight: bolder;
         color: #01447d;
-        text-align: center;
-        display: block;
-        width: 100%;
-        background-color: rgba(175,226,228,1);
+        background-color: rgb(179, 210, 236);
         padding: 5px 0;
-        border-radius: 10px;
+        border-radius: 10px 10px 0 0;
     }
 
 .searchListColumn {
@@ -420,20 +425,18 @@
         display: block;
         margin: 2px;
         padding: 1px 4px;
-        background-color: rgba(175,226,228,0.8);
         border-radius: 5px;
         text-align: left;
         font-size: 16px;
         text-decoration: none;
-        border: 1px solid rgba(175,226,228,0.8);
     }
 
         .searchListColumn a:hover {
-            background-color: rgb(232, 251, 196);
+            background-color: rgb(179, 210, 236);
         }
 
 #bigImage {
-    background-color: rgb(175, 226, 228);
+    background-color: rgb(200, 220, 255);
     display: inline-block;
     vertical-align: middle;
     border-radius: 20px;
@@ -488,7 +491,7 @@
         font-family: Calibri, Tahoma, Geneva, sans-serif;
         display: none;
         padding: 0 5px;
-        background-color: rgba(255, 255, 170, 0.30);
+        background-color:  rgba(206, 228, 246, 0.20);
     }
 
     .tooltip:hover span {
@@ -496,8 +499,8 @@
     }
 
 .herbalMainDiv {
-    background-color: rgba(175,226,228,0.2);
-    border-radius: 20px;
-    padding: 10px 0;
+    background-color: rgba(179, 210, 236,0.2);
+    border-radius: 10px;
+    padding: 0 0 10px 0;
     margin: 10px;
 }

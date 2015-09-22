@@ -3,7 +3,7 @@
 
 @section Body{
     <div id="coolListWrapper">
-        <span>Результаты поиска по запросу: "@ViewBag.searchedText"</span>
+        <span>Результаты поиска по запросу: "@ViewBag.searchedText"</span><span style="font-size: smaller;">(@Model.Count @:растений)</span>
 
     @foreach (var item in @Model)
     {

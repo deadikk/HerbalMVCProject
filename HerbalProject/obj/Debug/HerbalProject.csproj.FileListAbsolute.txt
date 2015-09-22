@@ -38,3 +38,5 @@ D:\Projects\My\HerbalProject\HerbalProject\bin\EntityFramework.xml
 D:\Projects\My\HerbalProject\HerbalProject\obj\Debug\HerbalProject.csprojResolveAssemblyReference.cache
 D:\Projects\My\HerbalProject\HerbalProject\obj\Debug\HerbalProject.dll
 D:\Projects\My\HerbalProject\HerbalProject\obj\Debug\HerbalProject.pdb
+D:\Projects\My\HerbalProject\HerbalProject\bin\EntityFramework.SqlServer.dll
+D:\Projects\My\HerbalProject\HerbalProject\bin\EntityFramework.SqlServer.xml
