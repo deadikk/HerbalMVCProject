@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -23,6 +24,14 @@ namespace HerbalProject.Controllers
                 return View("_nothingToShow");
             }
             ViewBag.relatedHerbs = herbDllProj.HerbalList.getRelatedHerbs(temp.name_latin);
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (string item in temp.russianNames)
+            {
+                sb.Append(item + ", ");
+            }
+            ViewBag.Decription = sb.ToString().TrimEnd(',');
             return View(temp);
         }
 

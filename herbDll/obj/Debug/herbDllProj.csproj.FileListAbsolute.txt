@@ -8,6 +8,16 @@ D:\Projects\My\MvcApplication\herbDllProj\bin\Debug\EntityFramework.SqlServer.dl
 D:\Projects\My\MvcApplication\herbDllProj\bin\Debug\EntityFramework.xml
 D:\Projects\My\MvcApplication\herbDllProj\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projects\My\MvcApplication\herbDllProj\obj\Debug\herbDllProj.csprojResolveAssemblyReference.cache
+C:\Users\deadi\Source\Repos\HerbalMVCProject\herbDll\bin\Debug\herbDllProj.dll.config
+C:\Users\deadi\Source\Repos\HerbalMVCProject\herbDll\bin\Debug\herbDllProj.dll
+C:\Users\deadi\Source\Repos\HerbalMVCProject\herbDll\bin\Debug\herbDllProj.pdb
+C:\Users\deadi\Source\Repos\HerbalMVCProject\herbDll\bin\Debug\EntityFramework.dll
+C:\Users\deadi\Source\Repos\HerbalMVCProject\herbDll\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\deadi\Source\Repos\HerbalMVCProject\herbDll\bin\Debug\EntityFramework.xml
+C:\Users\deadi\Source\Repos\HerbalMVCProject\herbDll\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\deadi\Source\Repos\HerbalMVCProject\herbDll\obj\Debug\herbDllProj.csprojResolveAssemblyReference.cache
+C:\Users\deadi\Source\Repos\HerbalMVCProject\herbDll\obj\Debug\herbDllProj.dll
+C:\Users\deadi\Source\Repos\HerbalMVCProject\herbDll\obj\Debug\herbDllProj.pdb
 D:\Projects\My\HerbalProject\herbDll\bin\Debug\herbDllProj.dll.config
 D:\Projects\My\HerbalProject\herbDll\bin\Debug\herbDllProj.dll
 D:\Projects\My\HerbalProject\herbDll\bin\Debug\herbDllProj.pdb
@@ -17,4 +27,3 @@ D:\Projects\My\HerbalProject\herbDll\bin\Debug\EntityFramework.xml
 D:\Projects\My\HerbalProject\herbDll\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projects\My\HerbalProject\herbDll\obj\Debug\herbDllProj.dll
 D:\Projects\My\HerbalProject\herbDll\obj\Debug\herbDllProj.pdb
-D:\Projects\My\HerbalProject\herbDll\obj\Debug\herbDllProj.csprojResolveAssemblyReference.cache
