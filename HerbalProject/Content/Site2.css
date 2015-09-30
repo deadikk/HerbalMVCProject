@@ -7,6 +7,11 @@
     cursor: default;
 }
 
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
 @font-face {
     font-family: 'glyphicons-halflings-regular';
     src: url('../Fonts/glyphicons-halflings-regular.eot') format('embedded-opentype');
@@ -24,9 +29,6 @@
     height: 100px;
     background-color: rgb(179, 210, 236);
     border-radius: 10px 10px 0 0;
-   
-    
-    
 }
 
     #headerDiv span {
@@ -169,14 +171,13 @@
     border-radius: 10px;
 }
 
-
-
     .coolListItem:last-child {
         margin-bottom: 10px;
     }
 
     .coolListItem:hover {
         background-color: rgba(179, 210, 236, 1);
+        box-shadow: 0 0 5px #01447D;
     }
 
 #coolListWrapper {
@@ -185,7 +186,7 @@
     border-radius: 10px;
     background-color: rgba(179, 210, 236, 0.2);
     display: inline-block;
-    min-height:400px;
+    min-height: 400px;
 }
 
     #coolListWrapper > span:first-child {
@@ -198,6 +199,7 @@
         border-radius: 10px 10px 0 0;
         color: #01447D;
         font-weight: bolder;
+        margin-bottom: 10px;
     }
 
 .coolListItemTitle {
@@ -371,13 +373,12 @@
     background-position: 50% 0;
     border-radius: 125px;
     cursor: pointer;
-    
-}
-
-.herbImage:hover {
-    
     box-shadow: 0 0 10px rgba(0,50,150,0.8);
 }
+
+    .herbImage:hover {
+        box-shadow: 0 0 10px blue;
+    }
 
 #macroImg {
     float: left;
@@ -401,24 +402,22 @@
     background-color: rgba(179, 210, 236,0.2);
     width: 820px;
     border-radius: 10px;
-    min-height:400px;
+    min-height: 400px;
+    padding-bottom: 20px;
 }
 
-    #textSearchResultList span {
-        display: block;
-        width: 100%;
-        text-align: center;
-        font-size: larger;
-        font-weight: bolder;
-        color: #01447d;
-        background-color: rgb(179, 210, 236);
-        padding: 5px 0;
-        border-radius: 10px 10px 0 0;
+    #textSearchResultList h1 {
+        margin-bottom: 10px;
     }
+
+    #textSearchResultList h1+div{
+        margin-left: 10px;
+    }
+
 
 .searchListColumn {
     float: left;
-    width: 205px;
+    width: 200px;
     margin: 0;
 }
 
@@ -443,8 +442,12 @@
     vertical-align: middle;
     border-radius: 20px;
     cursor: pointer;
-    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,50,150,0.8);
 }
+
+    #bigImage:hover {
+        box-shadow: 0 0 15px blue;
+    }
 
     #bigImage img {
         max-width: 810px;
@@ -453,6 +456,7 @@
         display: block;
         border-radius: 20px;
         cursor: pointer;
+        border: 5px solid rgba(0,50,150,0.5);
     }
 
 #bigImageWrapper {
@@ -477,7 +481,6 @@
 .tooltip {
     color: #000000;
     outline: none;
-    cursor: help;
     text-decoration: none;
     position: relative;
 }
@@ -493,7 +496,7 @@
         font-family: Calibri, Tahoma, Geneva, sans-serif;
         display: none;
         padding: 0 5px;
-        background-color:  rgba(206, 228, 246, 0.20);
+        background-color: rgba(206, 228, 246, 0.20);
     }
 
     .tooltip:hover span {

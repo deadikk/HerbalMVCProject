@@ -27,3 +27,4 @@ D:\Projects\My\HerbalProject\herbDll\bin\Debug\EntityFramework.xml
 D:\Projects\My\HerbalProject\herbDll\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projects\My\HerbalProject\herbDll\obj\Debug\herbDllProj.dll
 D:\Projects\My\HerbalProject\herbDll\obj\Debug\herbDllProj.pdb
+D:\Projects\My\HerbalProject\herbDll\obj\Debug\herbDllProj.csprojResolveAssemblyReference.cache

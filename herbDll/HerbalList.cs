@@ -98,8 +98,7 @@ namespace herbDllProj
             foreach (var item in HerbalList.herbals)
             {
                 List<string> receips = item.receipsTxt.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                if (receips == null) continue;
-
+                
                 if (receips.Exists(x => x.ToLower().Contains(symbols.ToLower())))
                 {
                     result.Add(item);

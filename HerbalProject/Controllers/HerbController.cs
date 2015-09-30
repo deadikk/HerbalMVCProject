@@ -29,9 +29,9 @@ namespace HerbalProject.Controllers
 
             foreach (string item in temp.russianNames)
             {
-                sb.Append(item + ", ");
+                sb.Append(item + ",");
             }
-            ViewBag.Decription = sb.ToString().TrimEnd(',');
+            ViewBag.Description = sb.ToString().TrimEnd(',');
             return View(temp);
         }
 

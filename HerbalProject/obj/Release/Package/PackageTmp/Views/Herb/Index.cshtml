@@ -4,14 +4,18 @@
     ViewBag.Title = @Model.name_latin;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@section SearchEngine
+{
+    <meta name="keywords" content="@Model.name_latin, @ViewBag.Description"/>
+    <meta name="Description" content="Известные названия: @ViewBag.Description"/>
+}
 @section Body{
 
     <div class="herbalMainDiv">
 
         @if (!Model.name_latin.IsEmpty())
         {
-            <span class="latinHeader">@Model.name_latin</span>
+            <h1 class="latinHeader">@Model.name_latin</h1>
 
         }
 

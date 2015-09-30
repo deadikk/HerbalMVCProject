@@ -36,20 +36,20 @@ namespace HerbalProject.Controllers
         {
             StringBuilder sb = new StringBuilder();
             int i = 0;
-            
+
             for (char x = 'А'; x <= 'Я'; x++, i++)
             {
                 if (x != 'Й' && x != 'Ь' && x != 'Ъ' && x != 'Ё' && x != 'Ы')
                 {
                     sb.Append(x);
                 }
-               
+
             }
 
             return PartialView("_Letters", sb.ToString());
         }
 
-        
+
         public ActionResult textList(string letter)
         {
             if (letter == null || letter.Length > 1)
@@ -62,7 +62,7 @@ namespace HerbalProject.Controllers
 
             if (symbol >= 65 && symbol <= 90)
             {
-                return View("_TextListLatin",herbDllProj.HerbalList.getLatinListByFirstSymbols(letter));
+                return View("_TextListLatin", herbDllProj.HerbalList.getLatinListByFirstSymbols(letter));
 
             }
 
@@ -74,51 +74,65 @@ namespace HerbalProject.Controllers
             return View("_nothingToShow");
         }
 
-        
-       
+
+
 
         public ActionResult searchAll(string s)
         {
-            if (s.Length < 3)
+            try
             {
-                ViewBag.message = "Введите более 3-х символов для корректного поиска.";
-                return View("_nothingToShow");
-            }
-            List<herbDllProj.herbals> temp = new List<herbDllProj.herbals>();
-            temp = herbDllProj.HerbalList.getLatinListByAnySymbols(s);
-            if (temp == null || temp.Count < 1)
-            {
-                temp = herbDllProj.HerbalList.getListByAnyRussianSymbols(s);
-            }
-            if (temp == null || temp.Count < 1)
-            {
-                return View("_nothingToShow");
-            }
-            temp.ForEach(h => h.russianNames.Sort());
-            ViewBag.searchedText = s;
-            ViewBag.Title = "Поиск: " + s;
-            return View("_CoolList", temp);
+                if (s.Length < 3)
+                {
+                    ViewBag.message = "Введите более 3-х символов для корректного поиска.";
+                    return View("_nothingToShow");
+                }
+                List<herbDllProj.herbals> temp = new List<herbDllProj.herbals>();
+                temp = herbDllProj.HerbalList.getLatinListByAnySymbols(s);
+                if (temp == null || temp.Count < 1)
+                {
+                    temp = herbDllProj.HerbalList.getListByAnyRussianSymbols(s);
+                }
+                if (temp == null || temp.Count < 1)
+                {
+                    return View("_nothingToShow");
+                }
+                temp.ForEach(h => h.russianNames.Sort());
+                ViewBag.searchedText = s;
+                ViewBag.Title = "Поиск: " + s;
 
+                return View("_CoolList", temp);
+            }
+            catch
+            {
+                return View("_nothingToShow");
+            }
         }
 
         public ActionResult searchReseips(string r)
         {
-            if (r.Length < 4)
+            try
             {
-                ViewBag.message = "Введите более 3-х символов для корректного поиска.";
+                if (r.Length < 4)
+                {
+                    ViewBag.message = "Введите более 3-х символов для корректного поиска.";
+                    return View("_nothingToShow");
+                }
+
+                List<herbDllProj.herbals> temp = new List<herbDllProj.herbals>();
+
+                temp = herbDllProj.HerbalList.getListByReceip(r);
+                if (temp == null || temp.Count < 1)
+                {
+                    return View("_nothingToShow");
+                }
+                ViewBag.searchedText = r;
+                ViewBag.Title = "Поиск: " + r;
+                return View("_CoolList", temp);
+            }
+            catch
+            {
                 return View("_nothingToShow");
             }
-
-            List<herbDllProj.herbals> temp = new List<herbDllProj.herbals>();
-
-            temp = herbDllProj.HerbalList.getListByReceip(r);
-            if (temp == null || temp.Count < 1)
-            {
-                return View("_nothingToShow");
-            }
-            ViewBag.searchedText = r;
-            ViewBag.Title = "Поиск: " + r;
-            return View("_CoolList", temp);
         }
     }
 }

@@ -3,13 +3,13 @@
 
 @section Body{
     <div id="coolListWrapper">
-        <span>Результаты поиска по запросу: "@ViewBag.searchedText"</span><span style="font-size: smaller;">(@Model.Count @:растений)</span>
+        <span>Результаты поиска по запросу: "@ViewBag.searchedText" <span style="font-size: small;">(@Model.Count растений)</span> </span>
 
-    @foreach (var item in @Model)
+        @foreach (var item in @Model)
     {
-        @Html.Partial("_CoolListItem", item);
+            @Html.Partial("_CoolListItem", item);
 
     }
-</div>
+    </div>
 
 }
