@@ -4,17 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using herbDllProj;
 
 namespace HerbalProject.Controllers
 {
     public class SearchController : Controller
     {
-        //
-        // GET: /SearchResult/
+       
+        private static HerbalList _herbalList;
 
+        public SearchController()
+        {
+            if (_herbalList == null)
+            {
+                _herbalList = new HerbalList();
+            }
+            
+        }
         public ActionResult Index()
         {
             return View();
+            
         }
 
 
@@ -62,13 +72,13 @@ namespace HerbalProject.Controllers
 
             if (symbol >= 65 && symbol <= 90)
             {
-                return View("_TextListLatin", herbDllProj.HerbalList.getLatinListByFirstSymbols(letter));
+                return View("_TextListLatin", _herbalList.getLatinListByFirstSymbols(letter));
 
             }
 
             if ((symbol >= 1040 && symbol <= 1065) || (symbol > 1068 && symbol <= 1071))
             {
-                return View("_TextListRus", herbDllProj.HerbalList.getDictionaryByRussianSymbols(letter));
+                return View("_TextListRus", _herbalList.getDictionaryByRussianSymbols(letter));
             }
 
             return View("_nothingToShow");
@@ -87,10 +97,10 @@ namespace HerbalProject.Controllers
                     return View("_nothingToShow");
                 }
                 List<herbDllProj.herbals> temp = new List<herbDllProj.herbals>();
-                temp = herbDllProj.HerbalList.getLatinListByAnySymbols(s);
+                temp = _herbalList.getLatinListByAnySymbols(s);
                 if (temp == null || temp.Count < 1)
                 {
-                    temp = herbDllProj.HerbalList.getListByAnyRussianSymbols(s);
+                    temp = _herbalList.getListByAnyRussianSymbols(s);
                 }
                 if (temp == null || temp.Count < 1)
                 {
@@ -120,7 +130,7 @@ namespace HerbalProject.Controllers
 
                 List<herbDllProj.herbals> temp = new List<herbDllProj.herbals>();
 
-                temp = herbDllProj.HerbalList.getListByReceip(r);
+                temp = _herbalList.getListByReceip(r);
                 if (temp == null || temp.Count < 1)
                 {
                     return View("_nothingToShow");

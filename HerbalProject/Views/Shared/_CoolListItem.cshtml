@@ -1,71 +1,69 @@
 ﻿@model herbDllProj.herbals
 
 <div class="coolListItem">
-    <a href="@Url.Action("Index", "Herb", new { name = @Model.name_latin.Replace(' ', '_').Replace('.', '!') })">
-        <div class="coolItemWrapper">
 
+    <a href="/herb/@Model.name_latin.Replace(' ', '_').Replace('.', '!')">
+        <div>
+            <div class="coolItemWrapper">
+                <div style="background-image: Url('@Url.Content("~/img/images_max200/" + @Model.name_latin + "/1.jpg")')" class="CoolItemPic">
 
-            <div style="background-image:Url('@Url.Content("~/img/images_max200/"+@Model.name_latin+"/1.jpg")')" class="CoolItemPic">
+                </div>
 
-            </div>
+                <span class="coolListItemTitle" >@Model.name_latin</span>
 
-
-
-
-            <span class="coolListItemTitle">@Model.name_latin</span>
-
-            <ul class="CollListitemCol1">
-                @for (int i = 0; i < @Model.russianNames.Count; i++)
-                {
-                    if (i <= 4)
+                <ul class="CollListitemCol1">
+                    @for (int i = 0; i < @Model.russianNames.Count; i++)
                     {
-                        <li>@Model.russianNames[i]</li>
+                        if (i <= 4)
+                        {
+                            <li>@Model.russianNames[i]</li>
+                        }
                     }
+
+                </ul>
+
+                @if (@Model.russianNames.Count > 4)
+                {
+                    <ul class="CollListitemCol1">
+                        @for (int i = 0; i < @Model.russianNames.Count; i++)
+                        {
+                            if (i > 4 && i <= 9)
+                            {
+                                <li>@Model.russianNames[i]</li>
+                            }
+                        }
+
+                    </ul>
+                }
+                @if (@Model.russianNames.Count > 9)
+                {
+                    <ul class="CollListitemCol1">
+                        @for (int i = 0; i < @Model.russianNames.Count; i++)
+                        {
+                            if (i > 9 && i <= 14)
+                            {
+                                <li>@Model.russianNames[i]</li>
+                            }
+                        }
+
+                    </ul>
                 }
 
-            </ul>
-
-            @if (@Model.russianNames.Count > 4)
-            {
-                <ul class="CollListitemCol1">
-                    @for (int i = 0; i < @Model.russianNames.Count; i++)
-                    {
-                        if (i > 4 && i <= 9)
+                @if (@Model.russianNames.Count > 14)
+                {
+                    <ul class="CollListitemCol1">
+                        @for (int i = 0; i < @Model.russianNames.Count; i++)
                         {
-                            <li>@Model.russianNames[i]</li>
+                            if (i > 14 && i <= 17)
+                            {
+                                <li>@Model.russianNames[i]</li>
+                            }
                         }
-                    }
 
-                </ul>
-            }
-            @if (@Model.russianNames.Count > 9)
-            {
-                <ul class="CollListitemCol1">
-                    @for (int i = 0; i < @Model.russianNames.Count; i++)
-                    {
-                        if (i > 9 && i <= 14)
-                        {
-                            <li>@Model.russianNames[i]</li>
-                        }
-                    }
+                    </ul>
+                }
 
-                </ul>
-            }
-
-            @if (@Model.russianNames.Count > 14)
-            {
-                <ul class="CollListitemCol1">
-                    @for (int i = 0; i < @Model.russianNames.Count; i++)
-                    {
-                        if (i > 14 && i <= 17)
-                        {
-                            <li>@Model.russianNames[i]</li>
-                        }
-                    }
-
-                </ul>
-            }
-
+            </div>
         </div>
     </a>
 

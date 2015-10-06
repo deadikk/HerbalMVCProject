@@ -4,13 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using herbDllProj;
 
 namespace HerbalProject.Controllers
 {
     public class HerbController : Controller
     {
-        //
-        // GET: /Herb/
+        private static HerbalList _herbalList;
+
+        public HerbController()
+        {
+            if (_herbalList == null)
+            {
+                _herbalList = new HerbalList();
+            }
+
+        }
+
         [HttpGet]
         public ActionResult Index(string name)
         {
@@ -18,12 +28,12 @@ namespace HerbalProject.Controllers
             {
                 return View("_nothingToShow");
             }
-            herbDllProj.herbals temp = herbDllProj.HerbalList.herbals.Find(n => n.name_latin == name.Replace('_', ' ').Replace('!', '.'));
+            herbDllProj.herbals temp = _herbalList.herbals.Find(n => n.name_latin == name.Replace('_', ' ').Replace('!', '.'));
             if (temp == null)
             {
                 return View("_nothingToShow");
             }
-            ViewBag.relatedHerbs = herbDllProj.HerbalList.getRelatedHerbs(temp.name_latin);
+            ViewBag.relatedHerbs = _herbalList.getRelatedHerbs(temp.name_latin);
 
             StringBuilder sb = new StringBuilder();
 

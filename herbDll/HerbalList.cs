@@ -9,14 +9,14 @@ namespace herbDllProj
     public class HerbalList
     {
 
-        private static List<herbals> herbs;
-        public static List<herbals> herbals { get { return herbs; } }
+        private  List<herbals> herbs;
+        public  List<herbals> herbals { get { return herbs; } }
 
-        private static readonly herbalDBEntities context;
+        private readonly herbalDBEntities context;
 
-        static HerbalList()
+        public HerbalList()
         {
-            Console.WriteLine("HerbalList static constructor");
+            
             if (context == null)
             {
                 context = new herbalDBEntities();
@@ -28,52 +28,34 @@ namespace herbDllProj
 
         }
 
-        public static List<string> getLatinListByFirstSymbols(string symbols)
+        public  List<string> getLatinListByFirstSymbols(string symbols)
         {
-            List<string> temp = new List<string>();
-            foreach (var item in HerbalList.herbals.Where(h => h.name_latin.StartsWith(symbols, StringComparison.CurrentCultureIgnoreCase)).ToList())
-            {
-                temp.Add(item.name_latin);
-            }
+            List<string> temp = herbals.Where(h => h.name_latin.StartsWith(symbols, StringComparison.CurrentCultureIgnoreCase)).ToList().Select(item => item.name_latin).ToList();
+            temp.Sort();
             return temp;
         }
 
-        public static List<herbals> getLatinListByAnySymbols(string symbols)
-        {
-            return HerbalList.herbals.Where(h => h.name_latin.ToLower().Contains(symbols.ToLower())).ToList();
-        }
-
-
-        public static List<herbals> getListByAnyRussianSymbols(string symbols)
+        public  List<herbals> getLatinListByAnySymbols(string symbols)
         {
             List<herbals> result = new List<herbals>();
+            result = herbals.Where(h => h.name_latin.ToLower().Contains(symbols.ToLower())).ToList();
 
-            foreach (var item in HerbalList.herbals)
-            {
-
-                if (item.russianNames.Find(x => x.ToLower().Contains(symbols.ToLower())) != null)
-                {
-                    result.Add(item);
-                }
-            }
-
-            return result;
+            return result.OrderBy(n => n.name_latin).ToList();
         }
 
-        public static List<HerbalList.RusLatinDictionary> getDictionaryByRussianSymbols(string symbols)
+
+        public  List<herbals> getListByAnyRussianSymbols(string symbols)
         {
-            List<HerbalList.RusLatinDictionary> result = new List<HerbalList.RusLatinDictionary>();
-            foreach (var item in herbals)
-            {
-                foreach (var name in item.russianNames)
-                {
-                    if (name.StartsWith(symbols, StringComparison.CurrentCultureIgnoreCase))
-                    {
-                        result.Add(new HerbalList.RusLatinDictionary(name, item.name_latin));
-                    }
-                }
-            }
-            return result;
+            List<herbals> result = herbals.Where(item => item.russianNames.Find(x => x.ToLower().Contains(symbols.ToLower())) != null).ToList();
+
+            return result.OrderBy(n => n.name_latin).ToList();
+        }
+
+        public  List<HerbalList.RusLatinDictionary> getDictionaryByRussianSymbols(string symbols)
+        {
+            List<HerbalList.RusLatinDictionary> result = (from item in herbals from name in item.russianNames where name.StartsWith(symbols, StringComparison.CurrentCultureIgnoreCase) select new HerbalList.RusLatinDictionary(name, item.name_latin)).ToList();
+
+            return result.OrderBy(n=>n.key).ToList();
         }
 
         public class RusLatinDictionary
@@ -87,45 +69,26 @@ namespace herbDllProj
             }
         }
 
-        public static List<herbals> getListByReceip(string symbols)
+        public  List<herbals> getListByReceip(string symbols)
         {
             if (symbols == "givemeallherbalsplease")
             {
                 return herbals;
             }
 
-            List<herbals> result = new List<herbals>();
-            foreach (var item in HerbalList.herbals)
-            {
-                List<string> receips = item.receipsTxt.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                
-                if (receips.Exists(x => x.ToLower().Contains(symbols.ToLower())))
-                {
-                    result.Add(item);
-                }
-
-            }
+            List<herbals> result = (from item in herbals let receips = item.receipsTxt.Split(new string[] {"\n\n"}, StringSplitOptions.RemoveEmptyEntries).ToList() where receips.Exists(x => x.ToLower().Contains(symbols.ToLower())) select item).ToList();
 
             if (result.Count < 10)
             {
-                foreach (var item in HerbalList.herbals)
-                {
-                    List<string> receips = item.receipsTxt.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                    
-                    if (receips.Exists(x => x.ToLower().Contains(symbols.ToLower().Substring(0, symbols.Length - 1))))
-                    {
-                        result.Add(item);
-                    }
-
-                }
+                result.AddRange(from item in herbals let receips = item.receipsTxt.Split(new string[] {"\n\n"}, StringSplitOptions.RemoveEmptyEntries).ToList() where receips.Exists(x => x.ToLower().Contains(symbols.ToLower().Substring(0, symbols.Length - 1))) select item);
             }
             return result;
         }
 
-        public static List<herbals> getRelatedHerbs(string mainLatinName)
+        public  List<herbals> getRelatedHerbs(string mainLatinName)
         {
             List<herbals> result = new List<herbals>();
-            result.AddRange(HerbalList.herbals.Where(h => h.name_latin.ToLower().Contains(mainLatinName.Split(' ')[0].ToLower()) && h.name_latin != mainLatinName).ToList());
+            result.AddRange(herbals.Where(h => h.name_latin.ToLower().Contains(mainLatinName.Split(' ')[0].ToLower()) && h.name_latin != mainLatinName).ToList());
 
             //закоментил, потому что слова вроде "официальный" не связаны
             /*if (result.Count < 5 && mainLatinName.Split(' ').Length > 1)

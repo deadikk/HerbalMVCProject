@@ -1,4 +1,5 @@
-﻿@model herbDllProj.herbals
+﻿@using herbDllProj
+@model herbDllProj.herbals
 
 @{
     ViewBag.Title = @Model.name_latin;
@@ -6,8 +7,8 @@
 }
 @section SearchEngine
 {
-    <meta name="keywords" content="@Model.name_latin, @ViewBag.Description"/>
-    <meta name="Description" content="Известные названия: @ViewBag.Description"/>
+    <meta name="keywords" content="@Model.name_latin, @ViewBag.Description" />
+    <meta name="Description" content="Известные названия: @ViewBag.Description" />
 }
 @section Body{
 
@@ -19,15 +20,15 @@
 
         }
 
-        <div style="background-image:Url('@Url.Content("~/img/images_max400/"+@Model.name_latin+"/1.jpg")')" class="herbImage" id="macroImg" onclick="showBigImage(this.id)">
+        <div style="background-image: Url('@Url.Content("~/img/images_max400/" + @Model.name_latin + "/1.jpg")')" class="herbImage" id="macroImg" onclick="showBigImage(this.id)">
 
         </div>
 
-        <div style="background-image:Url('@Url.Content("~/img/images_max400/"+@Model.name_latin+"/2.jpg")')" class="herbImage" id="farImg" onclick="showBigImage(this.id)">
+        <div style="background-image: Url('@Url.Content("~/img/images_max400/" + @Model.name_latin + "/2.jpg")')" class="herbImage" id="farImg" onclick="showBigImage(this.id)">
 
         </div>
 
-        
+
         <div id="rusNamesDiv">
             @if (Model.russianNames != null)
             {
@@ -83,18 +84,18 @@
             </div>
         }
 
-        @if (((List<herbDllProj.herbals>)@ViewBag.relatedHerbs).Count() > 0)
+        @if (((List<herbals>)@ViewBag.relatedHerbs).Any())
         {
             <div class="par">
                 <span>Похожие растения:</span>
                 @Html.Partial("_relatedHerbs", (List<herbDllProj.herbals>)@ViewBag.relatedHerbs)
             </div>
         }
-        <div id="bigImageWrapper" onclick="hideBigImage();" class="hide">
-            <div id="bigImage" onclick="hideBigImage();">
-                <img src="@Url.Content("~/img/images_max1000/"+@Model.name_latin+"/1.jpg")" id="origImage" alt="Big herbal image" onclick="hideBigImage();" />
-            </div>
-            <div id="helper"></div>
-        </div>
+
+    </div>
+    <div id="bigImageWrapper" onclick="hideBigImage();" class="hide">
+
+        <img src="@Url.Content("~/img/images_max1000/" + @Model.name_latin + "/1.jpg")" id="origImage" alt="Big herbal image" onclick="hideBigImage();" />
+
     </div>
 }

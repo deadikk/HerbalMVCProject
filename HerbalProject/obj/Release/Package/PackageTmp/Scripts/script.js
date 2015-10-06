@@ -11,7 +11,7 @@
     bigImg.src = resultSource;
 
     var wrapper = document.getElementById('bigImageWrapper');
-    wrapper.style.display = 'table';
+    wrapper.style.display = 'block';
    
 
 }
