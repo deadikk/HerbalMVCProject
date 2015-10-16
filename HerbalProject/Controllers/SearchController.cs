@@ -62,6 +62,7 @@ namespace HerbalProject.Controllers
 
         public ActionResult textList(string letter)
         {
+            
             if (letter == null || letter.Length > 1)
             {
 
@@ -80,6 +81,8 @@ namespace HerbalProject.Controllers
             {
                 return View("_TextListRus", _herbalList.getDictionaryByRussianSymbols(letter));
             }
+
+            
 
             return View("_nothingToShow");
         }

@@ -16,7 +16,7 @@ namespace herbDllProj
             {
                 if (_russianNames == null)
                 {
-                    _russianNames = name_russian.Split(',').ToList();
+                    _russianNames = name_russian.Split(',').OrderBy(x=>x).ToList();
                 }
                 return _russianNames;
             }

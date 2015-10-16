@@ -76,12 +76,13 @@ namespace herbDllProj
                 return herbals;
             }
 
-            List<herbals> result = (from item in herbals let receips = item.receipsTxt.Split(new string[] {"\n\n"}, StringSplitOptions.RemoveEmptyEntries).ToList() where receips.Exists(x => x.ToLower().Contains(symbols.ToLower())) select item).ToList();
+            List<herbals> result = (from item in herbals let receips = item.receipsTxt.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).ToList() where receips.Exists(x => x.ToLower().Contains(symbols.ToLower().Substring(0, symbols.Length - 1))) select item).ToList();
 
-            if (result.Count < 10)
+            /*if (result.Count < 10)
             {
                 result.AddRange(from item in herbals let receips = item.receipsTxt.Split(new string[] {"\n\n"}, StringSplitOptions.RemoveEmptyEntries).ToList() where receips.Exists(x => x.ToLower().Contains(symbols.ToLower().Substring(0, symbols.Length - 1))) select item);
             }
+             * */
             return result;
         }
 

@@ -1,0 +1,11 @@
+﻿@model List<string>
+@{
+    string text = string.Empty;
+ foreach (string name in @Model.OrderBy(n => n))
+ {
+     text += name + ", ";
+ }
+    text = text.TrimEnd(new char[] {',', ' '});
+}
+    
+@text

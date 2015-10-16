@@ -31,14 +31,15 @@
         }
 
     </script>
+    <div class="searchByNameBlock">
+        <button id="nameSearchSubmit" title="Поиск по названию" onclick="searchByName();" class="sButton">Search</button>
+        <input type="text" id="s" name="s" placeholder="Поиск по названию" onkeypress="return searchKeyPress(event);"/>
 
-    <input type="text" id="s" name="s" onclick="value = '';" ,  value="Поиск по названию" onkeypress="return searchKeyPress(event);" />
-    <button id="nameSearchSubmit" title="Поиск по названию" onclick="searchByName();" class="sButton">Search</button>
+    </div>
+    <div class="searchByNameBlock" style="display: none;">
+        <input type="text" id="r" name="r" onclick="value = '';" value="Поиск по болезням" onkeypress="return searchReceipKeyPress(event);" />
+        <button id="SicknessSearchSubmit" title="Поиск по болезням" onclick="SearchBySickness();" class="srButton">Search</button>
+    </div>
 
 
-    <input type="text" id="r" name="r" onclick="value = '';" , value="Поиск по болезням" onkeypress="return searchReceipKeyPress(event);" />
-    <button id="SicknessSearchSubmit" title="Поиск по болезням" onclick="SearchBySickness();" class="srButton">Search</button>
-
-    
-    
 </div>

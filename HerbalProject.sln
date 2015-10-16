@@ -1,11 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A8393F7-78F2-43DB-BB56-3190B2636553}"
 	ProjectSection(SolutionItems) = preProject
 		WE-browsers.xml = WE-browsers.xml
+		WebEssentials-Settings.json = WebEssentials-Settings.json
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerbalProject", "HerbalProject\HerbalProject.csproj", "{1A3F8F4D-58C6-4484-8F67-840C4B8FDEA9}"

@@ -159,10 +159,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\favicon.png" />
-    <Content Include="Content\Site2.css" />
-    <Content Include="Content\Site2.min.css">
-      <DependentUpon>Site2.css</DependentUpon>
+    <Content Include="Content\Site_mobile.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
     </Content>
+    <Content Include="Content\Site_mobile.min.css">
+      <DependentUpon>Site_mobile.css</DependentUpon>
+    </Content>
+    <Content Include="Content\title.svg" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Fonts\glyphicons-halflings-regular.woff2" />
@@ -6517,6 +6522,8 @@
     <Content Include="img\images_max400\Ziziphus jujuba\1.jpg" />
     <Content Include="img\images_max400\Ziziphus jujuba\2.jpg" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="img\title.png" />
+    <Content Include="img\title.svg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -6525,6 +6532,7 @@
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\padez.js" />
     <Content Include="Scripts\script.js" />
+    <Content Include="Scripts\script_mobile.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -6550,6 +6558,11 @@
     <Content Include="Views\Herb\_relatedHerbs.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Home\PageNotFound.cshtml" />
+    <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
+    <Content Include="Views\Search\_TextListLatin.Mobile.cshtml" />
+    <Content Include="Views\Search\_TextListRus.Mobile.cshtml" />
+    <Content Include="Views\Herb\Index.Mobile.cshtml" />
+    <Content Include="Views\Herb\_RusNames.Mobile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

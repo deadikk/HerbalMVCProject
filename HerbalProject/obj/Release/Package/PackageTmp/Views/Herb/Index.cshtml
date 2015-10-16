@@ -40,7 +40,7 @@
         @if (!Model.description.IsEmpty())
         {
             <div class="par">
-                <span>Описание:</span>
+                <span>Описание</span>
                 @Html.Partial("_Paragraph", @Model.description)
             </div>
         }
@@ -48,7 +48,7 @@
         @if (!Model.places.IsEmpty())
         {
             <div class="par">
-                <span>Ареал произрастания:</span>
+                <span>Ареал произрастания</span>
                 @Html.Partial("_Paragraph", @Model.places)
             </div>
         }
@@ -56,7 +56,7 @@
         @if (!Model.preparing.IsEmpty())
         {
             <div class="par">
-                <span>Заготовка:</span>
+                <span>Заготовка</span>
                 @Html.Partial("_Paragraph", @Model.preparing)
             </div>
         }
@@ -64,7 +64,7 @@
         @if (!Model.herbal_using.IsEmpty())
         {
             <div class="par">
-                <span>Применение:</span>
+                <span>Применение</span>
                 @Html.Partial("_Paragraph", @Model.herbal_using)
             </div>
         }
@@ -72,7 +72,7 @@
         @if (!Model.receipsTxt.IsEmpty())
         {
             <div class="receipspar">
-                <span>Рекомендации к применению:</span>
+                <span>Рекомендации к применению</span>
                 @Html.Partial("_Receips", @Model.receipsTxt)
             </div>
         }
@@ -87,7 +87,7 @@
         @if (((List<herbals>)@ViewBag.relatedHerbs).Any())
         {
             <div class="par">
-                <span>Похожие растения:</span>
+                <span>Похожие растения</span>
                 @Html.Partial("_relatedHerbs", (List<herbDllProj.herbals>)@ViewBag.relatedHerbs)
             </div>
         }

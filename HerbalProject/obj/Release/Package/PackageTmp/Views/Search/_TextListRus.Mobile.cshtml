@@ -1,0 +1,26 @@
+﻿@model List<herbDllProj.HerbalList.RusLatinDictionary>
+
+@{
+    ViewBag.Title = "Растения на букву \"" + @Model[0].key[0] + "\"";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+   
+}
+@section Body{
+
+    <div id="textSearchResultList">
+        <h1 class="latinHeader">Растения на букву "@Model[0].key[0]"</h1>
+
+        <div id="searchColumns">
+
+            <div class="searchListColumn">
+                @foreach (var item in @Model)
+                {
+                    <a href="@Url.Action("Index", "Herb", new {name = @item.value.Replace(' ', '_').Replace('.', '!')})">@item.key<span style="font-size: smaller; margin-left: 1vw;">(@item.value)</span></a>
+                   
+                }
+            </div>
+
+        </div>
+    </div>
+
+}
