@@ -37,6 +37,12 @@
                 @Html.Partial("_searchBlock")
             </div>
 
+            <div id="mainPageDiv">
+                <div id="contentDiv">
+                    @RenderSection("Body")
+                </div>
+            </div>
+
             <div id="googleAds">
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <ins class="adsbygoogle"
@@ -49,14 +55,6 @@
                 </script>
             </div>
 
-            <div id="mainPageDiv">
-                <div id="contentDiv">
-                    @RenderSection("Body")
-                </div>
-
-
-            </div>
-           
 
         </div>
     </div>

@@ -37,6 +37,11 @@ namespace herbDllProj
 
         public  List<herbals> getLatinListByAnySymbols(string symbols)
         {
+            if (symbols == "givemeallherbalsplease")
+            {
+                return herbals;
+            }
+
             List<herbals> result = new List<herbals>();
             result = herbals.Where(h => h.name_latin.ToLower().Contains(symbols.ToLower())).ToList();
 
@@ -71,10 +76,7 @@ namespace herbDllProj
 
         public  List<herbals> getListByReceip(string symbols)
         {
-            if (symbols == "givemeallherbalsplease")
-            {
-                return herbals;
-            }
+           
 
             List<herbals> result = (from item in herbals let receips = item.receipsTxt.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).ToList() where receips.Exists(x => x.ToLower().Contains(symbols.ToLower().Substring(0, symbols.Length - 1))) select item).ToList();
 
