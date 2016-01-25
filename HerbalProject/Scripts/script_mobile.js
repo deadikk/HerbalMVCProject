@@ -7,7 +7,8 @@
     var bigImg = document.getElementById('origImage');
     var resultSource = myDiv.style.backgroundImage.split('/img/')[1];
     resultSource = resultSource.replace(')', '');
-    resultSource = '/img/' + resultSource.replace('400', '1000');
+    resultSource = '/img/' + resultSource.replace('400', '1000').replace('"', '');
+    
     bigImg.src = resultSource;
 
     var wrapper = document.getElementById('bigImageWrapper');
